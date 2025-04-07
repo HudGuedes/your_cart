@@ -73,7 +73,7 @@ Para alterar a quantidade de produtos no carrinho:
 ```
 
 Para remover um produto do carrinho:
-- URL: DELETE http://localhost:3000/cart/1
+- URL: DELETE http://localhost:3000/carts/1
 
 <h2>Rodar o Sidekiq</h2>
 
