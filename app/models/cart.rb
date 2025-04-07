@@ -8,6 +8,7 @@ class Cart < ApplicationRecord
   scope :cart_inactive_for_more_than_3_hours, -> { where('last_interaction_at < ? AND cart_abandoned = ?', 3.hours.ago, false) }
 
   before_create :set_last_interaction
+  before_save :check_items_quantities
 
   def set_last_interaction
     self.last_interaction_at ||= Time.current
@@ -65,5 +66,12 @@ class Cart < ApplicationRecord
       end,
       total_price: total_price.to_f
     }
+  end
+
+  def check_items_quantities
+    if cart_items.any? { |item| item.quantity <= 0 }
+      errors.add(:base, 'Quantidade deve ser maior do que zero!')
+      throw(:abort)
+    end
   end
 end
