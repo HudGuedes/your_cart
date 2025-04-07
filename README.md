@@ -32,7 +32,7 @@ POSTGRES_PASSWORD= #sua_senha_do_banco
 - Abre o prompt e entre no diretório deste repositório, execute o comando `docker-compose up --build` para instalar as dependências do docker.
 - Após finalizar rode ainda em outro prompt o comando `docker-compose exec web rails db:create db:migrate`
 
-<h2>ROTAS DA API</h2>
+<h2>Rotas das APIs;</h2>
 
 Utilize alguma ferramenta de testar APIs como insomnia ou postman
 
@@ -75,11 +75,11 @@ Para alterar a quantidade de produtos no carrinho:
 Para remover um produto do carrinho:
 - URL: DELETE http://localhost:3000/carts/1
 
-<h2>Rodar o Sidekiq</h2>
+<h2>Rodar o Sidekiq;</h2>
 
 No prompt rode o comando docker-compose exec web bundle exec sidekiq.
 Para conseguir testar o job, altere no banco o carrinho criado ou via console, alterando o campo last_interaction_at para menos de 3 horas ou mais e assim podemos forçar o Worker criado no rails console, no prompt rode rails c e execute o comando `MarkCartAsAbandonedJob.perform_async`
 
-<h2>Rodar os Testes</h2>
+<h2>Rodar os Testes;</h2>
 
 No prompt execute o comando `docker-compose exec web rspec`
