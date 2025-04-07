@@ -2,7 +2,7 @@
 
 Uma API para gestão dos seus produtos em seu carrinho.
 
-<h1>Tecnologias utilizadas;</h1>
+<h2>Tecnologias utilizadas;</h2>
 
 - ruby 3.3.1
 - rails 7.1.3.2
@@ -32,7 +32,7 @@ POSTGRES_PASSWORD= #sua_senha_do_banco
 - Abre o prompt e entre no diretório deste repositório, execute o comando `docker-compose up --build` para instalar as dependências do docker.
 - Após finalizar rode ainda em outro prompt o comando `docker-compose exec web rails db:create db:migrate`
 
-<h2>Rotas das APIs;</h2>
+<h2>Rotas da API;</h2>
 
 Utilize alguma ferramenta de testar APIs como insomnia ou postman
 
